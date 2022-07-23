@@ -26,6 +26,10 @@ function AppBarWithMenu() {
   return (
     <>
       <AppBar menuOpen={menuOpen} subMenuOpen={subMenuOpen}>
+        {/*
+          Compose your regular MUI toolbar like: https://mui.com/material-ui/react-app-bar/#basic-app-bar
+        */}
+        {/*=========================*/}
         <Toolbar>
           <IconButton>
             <SupervisedUserCircle fontSize={"large"} />
@@ -54,7 +58,12 @@ function AppBarWithMenu() {
             </IconButton>
           )}
         </Toolbar>
+        {/*=========================*/}
 
+        {/*
+          Compose a AppBar SubMenu content with AppBarMenuList and AppBarListItem components
+        */}
+        {/*=========================*/}
         <AppBarSubMenu>
           <AppBarMenuList>
             <ButtonBase sx={{ mt: 1 }} onClick={() => setSubMenuOpen(false)}>
@@ -73,8 +82,14 @@ function AppBarWithMenu() {
             </AppBarListItem>
           </AppBarMenuList>
         </AppBarSubMenu>
+        {/*=========================*/}
 
+        {/*
+          Compose a main AppBar Main Menu content with AppBarMenuList and AppBarListItem components
+        */}
+        {/*=========================*/}
         <AppBarMenu>
+          {/*=========================*/}
           <AppBarMenuList>
             <AppBarListItem>
               <ImageIcon sx={{ mr: 1 }} />
@@ -87,7 +102,13 @@ function AppBarWithMenu() {
               <ListItemText primary={"item1"} />
             </AppBarListItem>
           </AppBarMenuList>
+          {/*=========================*/}
+
+          {/*========================= SPACER BETWEEN TWO LIST ITEMS*/}
           <Box mb={4} />
+          {/*=========================*/}
+
+          {/*=========================*/}
           <AppBarMenuList
             sx={{ flexGrow: 1 }}
             subheader={<Typography variant={"h5"}>Account</Typography>}
@@ -113,8 +134,11 @@ function AppBarWithMenu() {
               <ListItemText primary={"item1"} />
             </AppBarListItem>
           </AppBarMenuList>
+          {/*=========================*/}
         </AppBarMenu>
+        {/*=========================*/}
       </AppBar>
+      {/*=========================*/}
     </>
   );
 }
