@@ -54,6 +54,10 @@ export const customStyledComponentsTheme = {
       styleOverrides: {
         root: sx({
           py: 2,
+          "& .MuiListItemIcon-root": {
+            minWidth: "auto",
+            mr: 1.5,
+          },
           "&:hover": {
             background: "none",
           },

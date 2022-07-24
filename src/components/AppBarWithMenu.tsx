@@ -2,16 +2,22 @@ import {
   Box,
   ButtonBase,
   IconButton,
+  ListItem,
+  ListItemIcon,
   ListItemText,
+  Stack,
   Toolbar,
   Typography,
 } from "@mui/material";
 import {
   ArrowBack,
   Close as CloseIcon,
+  Flag,
   Image as ImageIcon,
+  Mail,
   Menu as MenuIcon,
   SupervisedUserCircle,
+  VerifiedUserRounded,
 } from "@mui/icons-material";
 import { AppBarMenuList } from "./AppBarMenuList";
 import { AppBarListItem } from "./AppBarListItem";
@@ -19,6 +25,7 @@ import { AppBar } from "./AppBar";
 import { useState } from "react";
 import { AppBarMenu } from "./AppBarMenu";
 import { AppBarSubMenu } from "./AppBarSubMenu";
+import { Theme } from "@mui/material/styles";
 
 function AppBarWithMenu() {
   const [menuOpen, setMenuOpen] = useState(true);
@@ -71,7 +78,9 @@ function AppBarWithMenu() {
               <Typography variant={"h5"}>Back</Typography>
             </ButtonBase>
             <AppBarListItem>
-              <ImageIcon sx={{ mr: 1 }} />
+              <ListItemIcon>
+                <VerifiedUserRounded />
+              </ListItemIcon>
               <ListItemText primary={"item1"} />
             </AppBarListItem>
             <AppBarListItem>
@@ -92,7 +101,9 @@ function AppBarWithMenu() {
           {/*=========================*/}
           <AppBarMenuList>
             <AppBarListItem>
-              <ImageIcon sx={{ mr: 1 }} />
+              <ListItemIcon>
+                <Mail />
+              </ListItemIcon>
               <ListItemText primary={"item1"} />
             </AppBarListItem>
             <AppBarListItem>
@@ -114,7 +125,21 @@ function AppBarWithMenu() {
             subheader={<Typography variant={"h5"}>Account</Typography>}
           >
             <AppBarListItem>
-              <ImageIcon sx={{ mr: 1 }} />
+              <ListItemIcon>
+                <ImageIcon />
+              </ListItemIcon>
+              <ListItemText primary={"item1"} />
+            </AppBarListItem>
+            <AppBarListItem>
+              <ListItemText primary={"item1"} />
+            </AppBarListItem>
+            <AppBarListItem>
+              <ListItemText primary={"item1"} />
+            </AppBarListItem>
+            <AppBarListItem>
+              <ListItemIcon>
+                <Mail />
+              </ListItemIcon>
               <ListItemText primary={"item1"} />
             </AppBarListItem>
             <AppBarListItem>
@@ -124,14 +149,33 @@ function AppBarWithMenu() {
               <ListItemText primary={"item1"} />
             </AppBarListItem>
           </AppBarMenuList>
-          <AppBarMenuList sx={{ bgcolor: "action.focus", mt: 2 }}>
+
+          <ListItem
+            secondaryAction={
+              <ListItemText
+                primary={
+                  <Typography
+                    color={"gray"}
+                    fontSize={"small"}
+                    variant={"body1"}
+                  >
+                    versie 23243
+                  </Typography>
+                }
+              />
+            }
+          />
+
+          <AppBarMenuList sx={{ bgcolor: "action.focus", mt: 4 }}>
             <AppBarListItem
               onClick={() => {
                 setSubMenuOpen(true);
               }}
             >
-              <ImageIcon sx={{ mr: 1 }} />
-              <ListItemText primary={"item1"} />
+              <ListItemIcon>
+                <Flag />
+              </ListItemIcon>
+              <ListItemText primary={"Open submenu"} />
             </AppBarListItem>
           </AppBarMenuList>
           {/*=========================*/}
